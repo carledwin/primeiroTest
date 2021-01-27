@@ -1,15 +1,19 @@
 package com.carledwinti;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+//import org.junit.Before;
+//import org.junit.Test;
 
 public class CalculadoraTeste {
 
     //para utilizar na inicialização de cada teste com o auxilio do @Before
     Calculadora calculadora;
 
-    @Before
+    //@Before
+    @BeforeEach
     public void setUp(){
         calculadora = new Calculadora();
     }
@@ -20,9 +24,11 @@ public class CalculadoraTeste {
         Assertions.assertThat(resultado).isEqualTo(15);
     }
 
-    @Test(expected = RuntimeException.class)
+    //@Test(expected = RuntimeException.class)
+    @Test
     public void naoDevePermitirSomaDoisNumerosSendoUmPeloMenosNegativo(){
-        calculadora.soma(-10, 5);
+        org.junit.jupiter.api.Assertions
+                .assertThrows(RuntimeException.class, () -> calculadora.soma(-10, 5));
     }
 
     @Test
@@ -31,9 +37,11 @@ public class CalculadoraTeste {
         Assertions.assertThat(resultado).isEqualTo(7);
     }
 
-    @Test(expected = RuntimeException.class)
+    //@Test(expected = RuntimeException.class)
+    @Test
     public void naoDevePermitirSubtracaoDoisNumerosSendoUmPeloMenosNegativo(){
-        calculadora.subtrai(-10, 5);
+        org.junit.jupiter.api.Assertions
+                .assertThrows(RuntimeException.class, () -> calculadora.subtrai(-10, 5));
     }
 
     @Test
@@ -42,9 +50,11 @@ public class CalculadoraTeste {
         Assertions.assertThat(resultado).isEqualTo(72);
     }
 
-    @Test(expected = RuntimeException.class)
+    //@Test(expected = RuntimeException.class)
+    @Test
     public void naoDevePermitirMultiplicacaoDoisNumerosSendoUmPeloMenosNegativo(){
-        calculadora.subtrai(-10, 5);
+        org.junit.jupiter.api.Assertions
+                .assertThrows(RuntimeException.class, () -> calculadora.subtrai(-10, 5));
     }
 
     @Test
@@ -53,14 +63,18 @@ public class CalculadoraTeste {
         Assertions.assertThat(resultado).isEqualTo(8);
     }
 
-    @Test(expected = RuntimeException.class)
+    //@Test(expected = RuntimeException.class)
+    @Test
     public void naoDevePermitirDivisaoDoisNumerosSendoUmPeloMenosNegativo(){
-        calculadora.subtrai(-10, 5);
+        org.junit.jupiter.api.Assertions
+                .assertThrows(RuntimeException.class, () -> calculadora.subtrai(-10, 5));
     }
 
-    @Test(expected = RuntimeException.class)
+    //@Test(expected = RuntimeException.class)
+    @Test
     public void naoDevePermitirDivisaoPorZero(){
-        calculadora.divide(32,0);
+        org.junit.jupiter.api.Assertions
+                .assertThrows(RuntimeException.class, () -> calculadora.divide(32,0));
     }
 
     @Test

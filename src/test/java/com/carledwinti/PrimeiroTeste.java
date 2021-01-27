@@ -1,8 +1,10 @@
 package com.carledwinti;
 
 //JUnit4
-import org.junit.Assert;
-import org.junit.Test;
+//import org.junit.Assert;
+//import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class PrimeiroTeste {
 
@@ -19,6 +21,6 @@ public class PrimeiroTeste {
 
         //verificação
         int esperado = 15;
-        Assert.assertEquals(esperado, resultado);
+        Assertions.assertEquals(esperado, resultado);
     }
 }

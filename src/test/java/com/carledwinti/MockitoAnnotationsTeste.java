@@ -1,17 +1,21 @@
 package com.carledwinti;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
 //Inicializa as variavies e contexto Mockito para teste
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class MockitoAnnotationsTeste {
 
     //outra forma de mockar uma variável
@@ -53,8 +57,5 @@ public class MockitoAnnotationsTeste {
         //inOrder.verify(lista).add("");//chamando primeiro add e depois size() //Test failed --> Wanted anywhere AFTER following interaction:
         inOrder.verify(lista).size();
         inOrder.verify(lista).add("");
-
-
-
     }
 }
